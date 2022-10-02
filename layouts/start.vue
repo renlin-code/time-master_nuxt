@@ -1,11 +1,11 @@
 <template>
     <div class="screen">
       <div class="background-front">
-        <header>
+        <header class="head-layout">
           <logo width="288rem" height="40rem" class="logo" />
         </header>
 
-        <main>
+        <main class="body-layout">
           <Nuxt />
         </main>
       </div>

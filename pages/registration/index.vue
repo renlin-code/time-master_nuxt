@@ -30,14 +30,8 @@ export default {
 <style scoped lang="scss">
 @import "../../static/scss/_vars.scss";
   .registration {
-  @media only screen and (min-width: 650px) {
-      max-width: 600rem;
-      position: absolute;
-      bottom: 0;
-
-  }
     &__figure {
-      padding-top: 50rem;
+      padding-top: 148rem;
       display: flex;
       justify-content: center;
     }

@@ -3,12 +3,12 @@
       <div class="front-layer background-front wrapper"
       :class="{'front-layer--open' : frontOpen}"
       >
-        <header>
+        <header class="head-layout">
           <HeaderDefault
             @openMenu="frontOpen=true"
           />
         </header>
-        <main>
+        <main class="body-layout">
           <Nuxt />
         </main>
         <div class="front-layer__cover-layer"
@@ -19,7 +19,9 @@
 
       <div class="back-layer wrapper"
       >
-        <NavMenu />
+        <NavMenu
+          @click.native="frontOpen=false"
+        />
       </div>
     </div>
 </template>
@@ -51,6 +53,7 @@ export default {
   z-index: 2;
   background-color: #FFFFFF;
   transition: all 360ms ease-in-out;
+  box-shadow: 0px -5px 4px rgba($black, 0.25), -6px 4px 4px rgba($black, 0.25);
 
   &__cover-layer {
     width: 100%;
@@ -62,7 +65,7 @@ export default {
   }
 
   &--open {
-    transform: translateX(50%) scale(0.93);
+    transform: translateX(253rem) scale(0.93);
     border-radius: 35rem;
   }
 }

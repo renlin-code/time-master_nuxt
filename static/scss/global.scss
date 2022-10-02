@@ -32,7 +32,7 @@ h2, .timemaster-subtitle {
 
 //GLOBAL STYLES
 .screen {
-  max-width: 600rem;
+  max-width: 450rem;
   height: 100vh;
   margin: 0 auto;
   // border-radius: 35rem;
@@ -61,13 +61,14 @@ header {
     width: 100%;
     position: relative;
     z-index: 2;
-    height: 90rem;
 }
-main {
+.head-layout {
+  height: 90rem;
+}
+.body-layout {
   height: calc(100vh - 90rem);
   overflow-y: scroll;
 }
-
 
 //LAYOUT
 .main-content-wrapper {

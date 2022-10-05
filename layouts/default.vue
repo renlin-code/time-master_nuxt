@@ -3,12 +3,12 @@
       <div class="front-layer background-front wrapper"
       :class="{'front-layer--open' : frontOpen}"
       >
-        <header class="head-layout">
+        <header>
           <HeaderDefault
             @openMenu="frontOpen=true"
           />
         </header>
-        <main class="body-layout">
+        <main>
           <Nuxt />
         </main>
         <div class="front-layer__cover-layer"

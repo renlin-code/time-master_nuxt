@@ -59,7 +59,7 @@ export default {
       padding: 58rem 0 0 25rem;
     }
     &__list {
-      padding: 229rem 0 0 23rem;
+      padding: 188rem 0 0 23rem;
       li a {
         display: grid;
         grid-template-columns: 23rem auto;

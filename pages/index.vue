@@ -1,13 +1,25 @@
 <template>
-  <div>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic!
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit optio excepturi mollitia nobis provident obcaecati cum deleniti necessitatibus? Aspernatur asperiores, sit ab illum tenetur beatae quidem laborum dolorum! Hic!
-  </div>
+  <section class="home">
+    <Page blur>
+      <template #title>
+        Hello, Rene!
+      </template>
+      <template #content>
+        <CategoriesCarousell />
+
+        <Task />
+      </template>
+    </Page>
+  </section>
 </template>
 
 <script>
+import Page from '../components/Layout/Page.vue';
+import CategoriesCarousell from '../components/singleItems/CategoriesCarousell.vue';
+import Task from '../components/UIKit/Task.vue';
 
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: {Page, CategoriesCarousell, Task}
 }
 </script>

@@ -36,7 +36,7 @@ export default {
       justify-content: center;
     }
     &__lower-half {
-      min-height: 100%;
+      min-height: 551rem;
       display: flex;
       flex-direction: column;
       align-items: center;

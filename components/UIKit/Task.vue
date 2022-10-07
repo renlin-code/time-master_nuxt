@@ -1,28 +1,37 @@
 <template>
-  <li class="task">
-    <div class="task__wrapper">
-      <div class="task__default">
-        <span class="task__default-icon">
-          <taskCircle />
-          <flag
-            v-if=false
-          />
-        </span>
-        <p class="task__default-text">
-          Getting Started With Gnome Mines. Gnome Mines is a virtual world full
-        </p>
-      </div>
-
-      <div class="task__delete">
-        <div class="task__delete-left">
-          <trash />
-          The task was deleted
+  <transition name="scale">
+    <li class="task"
+      :class="{
+        'task--done': done,
+        'task--deleted': deleted
+        }"
+    >
+      <div class="task__wrapper">
+        <div class="task__default">
+          <span class="task__default-icon"
+            @click="done = !done"
+          >
+            <flag v-if=important :color=color />
+            <taskCircle v-else :color=color />
+          </span>
+          <p class="task__default-text"
+            @click="deleted = true"
+          >{{ text }}</p>
         </div>
-        <button class="task__delete-undo">Undo</button>
-      </div>
 
-    </div>
-  </li>
+        <div class="task__delete">
+          <div class="task__delete-left">
+            <trash />
+            The task was deleted
+          </div>
+          <button class="task__delete-undo"
+            @click="deleted = false"
+          >Undo</button>
+        </div>
+
+      </div>
+    </li>
+  </transition>
 </template>
 
 <script>
@@ -32,7 +41,25 @@ import trash from '../icons/trash.vue';
 
 export default {
   name: "Task",
-  components: {taskCircle, flag, trash}
+  components: {taskCircle, flag, trash},
+  props: {
+    important: {
+      type: Boolean,
+      default: false
+    },
+    color: {
+      type: String,
+      default: "#777777"
+    },
+    text: {
+      type: String,
+      default: "Put a text inside of me using prop 'text'"
+    }
+  },
+  data: () => ({
+    done: false,
+    deleted: false
+  })
 
 }
 </script>
@@ -42,11 +69,12 @@ export default {
 
   .task {
     width: 100%;
-    padding-bottom: 10rem;
+    padding: 0 25rem 15rem;
     overflow-x: hidden;
     &__wrapper {
       display: flex;
-      transition: transform 300ms ease-in-out;
+      gap: 40rem;
+      transition: transform 360ms ease-in-out;
     }
     &__default {
       min-width: 100%;
@@ -83,16 +111,10 @@ export default {
         color: $gray;
         font-size: 12rem;
         line-height: 18rem;
-        box-shadow: 0px -1px 4px rgba($black, 0.25);
+        box-shadow: 0px 1px 4px rgba($black, 0.25);
       }
     }
 
-
-    &--deleted {
-      .task__wrapper {
-        transform: translateX(-100%);
-      }
-    }
     &--done {
       .task__default-text {
         text-decoration-line: line-through;
@@ -100,6 +122,13 @@ export default {
         color: $gray;
       }
     }
+
+    &--deleted {
+      .task__wrapper {
+        transform: translateX(calc(-100% - 40rem));
+      }
+    }
+
     &--old {
       .task__default-text {
         color: #DE2424;

@@ -3,6 +3,7 @@
     <li class="task"
       :class="{
         'task--done': done,
+        'task--old': old,
         'task--deleted': deleted
         }"
     >
@@ -12,7 +13,7 @@
             @click="done = !done"
           >
             <flag v-if=important :color=color />
-            <taskCircle v-else :color=color />
+            <task-circle v-else :color=color />
           </span>
           <p class="task__default-text"
             @click="deleted = true"
@@ -53,7 +54,11 @@ export default {
     },
     text: {
       type: String,
-      default: "Put a text inside of me using prop 'text'"
+      default: "Default text"
+    },
+    old: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({

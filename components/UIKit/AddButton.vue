@@ -80,16 +80,14 @@ export default {
       &-wrapper {
         position: absolute;
         overflow: hidden;
-        top: 5rem;
-        right: 20rem;
-        width: 255rem;
-        height: 68rem;
+        top: -5rem;
+        right: 34rem;
+        width: 265rem;
+        height: 88rem;
+        padding: 10rem 0 10rem 10rem;
         z-index: -1;
       }
       &-inner {
-        position: absolute;
-        top: 0;
-        right: 0;
         width: 255rem;
         height: 68rem;
         padding: 19rem 92rem 19rem 35rem;
@@ -119,13 +117,13 @@ export default {
     }
 
     @keyframes button {
-      5% {
-        transform: rotate(30deg);
-      }
-      15% {
+      4% {
         transform: rotate(-30deg);
       }
-      20% {
+      12% {
+        transform: rotate(30deg);
+      }
+      16% {
         transform: rotate(0deg);
       }
     }

@@ -12,21 +12,46 @@
         <div class="home__done-tasks">
           <TasksList />
         </div>
-        <AddButton class="home__button" />
+        <AddButton class="home__button"
+          @click.native="showModal = true"
+        />
       </template>
     </Page>
+
+    <InputModal
+      v-if=showModal
+      placeholder="Enter new task">
+
+      <template #content>
+        <div>
+          <CategoriesAccordion />
+        </div>
+      </template>
+    </InputModal>
+
   </section>
 </template>
 
 <script>
 import Page from '../components/Layout/Page.vue';
+import InputModal from '../components/Layout/InputModal.vue';
+
 import CategoriesCarousell from '../components/singleItems/CategoriesCarousell.vue';
 import TasksList from '../components/UIKit/TasksList.vue';
 import AddButton from '../components/UIKit/AddButton.vue';
+import CategoriesAccordion from '../components/UIKit/CategoriesAccordion.vue';
 
 export default {
   name: 'IndexPage',
-  components: {Page, CategoriesCarousell, TasksList, AddButton}
+  components: {Page, InputModal, CategoriesCarousell, TasksList, AddButton, CategoriesAccordion},
+  data: () => ({
+    showModal: false
+  }),
+  mounted() {
+    this.$nuxt.$on('closeModal', () => {
+      this.showModal = false;
+    })
+  }
 }
 </script>
 

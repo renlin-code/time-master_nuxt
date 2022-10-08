@@ -91,6 +91,10 @@ export default {
       align-items: center;
       border-radius: 20rem;
       box-shadow: 0px 4px 4px rgba( $black, 0.25);
+      &-icon {
+        display: grid;
+        place-content: center;
+      }
       &-text {
         transition: all 360ms ease-in-out;
       }

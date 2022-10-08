@@ -23,8 +23,9 @@
       placeholder="Enter new task">
 
       <template #content>
+        <CategoriesAccordion />
         <div>
-          <CategoriesAccordion />
+          Lorem ipsun
         </div>
       </template>
     </InputModal>

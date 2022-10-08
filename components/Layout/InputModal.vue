@@ -6,7 +6,7 @@
         <div class="main-content-wrapper">
           <textarea class="input-modal__input timemaster-title"
             type="text"
-            maxlength="20"
+            maxlength="15"
             :placeholder="placeholder"
           />
           <close class="input-modal__close"

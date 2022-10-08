@@ -61,11 +61,11 @@ export default {
     selected: 1,
     open: false
   }),
-  watch: {
-    selected() {
-      this.open = false;
-    }
-  }
+  // watch: {
+  //   selected() {
+  //     this.open = false;
+  //   }
+  // }
 }
 </script>
 
@@ -78,6 +78,7 @@ export default {
     overflow: hidden;
     background: #ffffff;
     border-radius: 30rem;
+    box-shadow: 0px 4px 4px rgba($black, 0.25);
     &__head {
       width: 100%;
       display: flex;

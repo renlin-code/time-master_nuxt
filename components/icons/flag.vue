@@ -22,3 +22,9 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+  svg path {
+    transition: all 360ms ease-in-out;
+  }
+</style>

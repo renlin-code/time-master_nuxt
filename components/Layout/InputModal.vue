@@ -68,7 +68,7 @@ export default {
       border: none;
       background: transparent;
       color: $gray;
-      margin: 186rem 0 79rem;
+      margin: 186rem 0 15rem;
       width: 100%;
       &::placeholder {
         color: rgba( $gray, 0.5);
@@ -83,8 +83,8 @@ export default {
       right: 25rem;
     }
     &__content {
-      padding-top: 34rem;
-      height: calc(100vh - 155rem);
+      padding-top: 74rem;
+      height: calc(100vh - 313rem);
       overflow: scroll;
     }
   }

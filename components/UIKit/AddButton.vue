@@ -9,7 +9,7 @@
       </div>
     </button>
 
-    <div class="add-button__cta-wrapper">
+    <div v-if="animated" class="add-button__cta-wrapper">
       <div class="add-button__cta-inner">
         <span class="timemaster-subtitle">Add new tasks</span>
       </div>
@@ -35,7 +35,7 @@ export default {
   .add-button {
     position: relative;
     cursor: pointer;
-    width: 269rem;
+    width: 80rem;
     height: 80rem;
     border-radius: 35rem;
     z-index: 0;
@@ -102,6 +102,7 @@ export default {
     }
 
     &--animated {
+      width: 269rem;
       .add-button {
         &__button {
           animation-name: button;

@@ -1,15 +1,17 @@
 <template>
-  <div class="categories-card">
-    <div v-if="extended" class="categories-card__top">
-      <categories color="#4E9DA1" />
-      <edit />
+  <transition name="scale">
+    <div class="category-card">
+      <div v-if="extended" class="category-card__top">
+        <categories color="#4E9DA1" />
+        <edit />
+      </div>
+      <h2 class="category-card__title timemaster-subtitle">Work</h2>
+      <span class="category-card__tasks timemaster-caption">10 tasks</span>
+      <div class="category-card__progress">
+        <div class="category-card__progress-inner"></div>
+      </div>
     </div>
-    <h2 class="categories-card__title timemaster-subtitle">Work</h2>
-    <span class="categories-card__tasks timemaster-caption">10 tasks</span>
-    <div class="categories-card__progress">
-      <div class="categories-card__progress-inner"></div>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -17,7 +19,7 @@ import categories from '../icons/categories.vue';
 import edit from '../icons/edit.vue';
 
 export default {
-  name: "CategoriesCard",
+  name: "CategoryCard",
   components: {categories, edit},
   props: {
     extended: {
@@ -31,7 +33,7 @@ export default {
 <style scoped lang="scss">
 @import "../../static/scss/_vars.scss";
 
-  .categories-card {
+  .category-card {
     background-color: #FFFFFF;
     padding: 15rem 20rem 21rem 20rem;
     border-radius: 20rem;

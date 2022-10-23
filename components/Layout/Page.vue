@@ -25,6 +25,7 @@ export default {
   }
 }
 </script>
+
 <style scoped lang="scss">
   .page {
     position: relative;
@@ -44,6 +45,11 @@ export default {
       &--blur {
         filter: blur(25rem);
       }
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 10rem;
     }
     &__content {
       padding-top: 34rem;

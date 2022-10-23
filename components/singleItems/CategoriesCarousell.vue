@@ -7,23 +7,23 @@
     </div>
     <div class="carousell__viewport">
       <div class="carousell__wrapper">
-        <CategoriesCard class="carousell__category" />
-        <CategoriesCard class="carousell__category" />
-        <CategoriesCard class="carousell__category" />
-        <CategoriesCard class="carousell__category" />
-        <CategoriesCard class="carousell__category" />
-        <CategoriesCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
+        <CategoryCard class="carousell__category" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CategoriesCard from '../UIKit/CategoriesCard.vue';
+import CategoryCard from '../UIKit/CategoryCard.vue';
 
 export default {
   name: "CategoriesCarousell",
-  components: {CategoriesCard}
+  components: {CategoryCard}
 }
 </script>
 

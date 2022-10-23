@@ -6,7 +6,7 @@
       @click="open = !open"
     >
       <calendar class="calendar-accordion__head-icon" />
-      <span class="timemaster-subtitle">Choose day</span>
+      <span class="timemaster-subtitle">Choose date</span>
     </div>
 
     <div class="calendar-accordion__body">
@@ -40,7 +40,7 @@
         <li class="calendar-accordion__date">11</li>
         <li class="calendar-accordion__date">12</li>
         <li class="calendar-accordion__date">13</li>
-        <li class="calendar-accordion__date to-do">14</li>
+        <li class="calendar-accordion__date">14</li>
         <li class="calendar-accordion__date">15</li>
         <li class="calendar-accordion__date">16</li>
         <li class="calendar-accordion__date">17</li>
@@ -108,6 +108,7 @@ export default {
     &__body {
       height: 0;
       transition: height 360ms ease-in-out;
+      border-top: 1px solid rgba($gray, 0.5);
     }
     &__data {
       display: flex;
@@ -147,6 +148,8 @@ export default {
       display: grid;
       place-content: center;
       border-radius: 5rem;
+      transition: all 360ms ease-in-out;
+
       &.out {
         color: $gray;
       }
@@ -156,9 +159,6 @@ export default {
       }
       &.selected {
         border: 1px solid $main-color;
-      }
-      &.to-do {
-        background-color: #C5E2F4;
       }
     }
 

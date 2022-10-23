@@ -1,18 +1,17 @@
 <template>
-  <section class="home">
+  <section class="inner-category">
     <Page blur>
       <template #title>
-        Hello, Rene!
+        Work <categories class="inner-category__title-icon" />
       </template>
       <template #content>
-        <CategoriesCarousell />
-        <div class="home__undone-tasks">
+        <div class="inner-category__undone-tasks">
           <TasksList />
         </div>
-        <div class="home__done-tasks">
+        <div class="inner-category__done-tasks">
           <TasksList />
         </div>
-        <AddButton class="home__button"
+        <AddButton class="inner-category__button"
           @click.native="showModal = true"
         />
       </template>
@@ -24,7 +23,6 @@
 
       <template #content>
         <div class="modal__params">
-          <CategoriesAccordion />
           <CalendarAccordion />
           <ImportantButton />
         </div>
@@ -36,19 +34,18 @@
 </template>
 
 <script>
-import Page from '../components/Layout/Page.vue';
-import InputModal from '../components/Layout/InputModal.vue';
-import CategoriesCarousell from '../components/singleItems/CategoriesCarousell.vue';
-import TasksList from '../components/UIKit/TasksList.vue';
-import AddButton from '../components/UIKit/AddButton.vue';
-import CategoriesAccordion from '../components/UIKit/CategoriesAccordion.vue';
-import CalendarAccordion from '../components/UIKit/CalendarAccordion.vue';
-import ImportantButton from '../components/UIKit/ImportantButton.vue';
-import OkButton from '../components/UIKit/OkButton.vue';
+import Page from '../../components/Layout/Page.vue';
+import InputModal from '../../components/Layout/InputModal.vue';
+import categories from '../../components/icons/categories.vue';
+import TasksList from '../../components/UIKit/TasksList.vue';
+import AddButton from '../../components/UIKit/AddButton.vue';
+import CalendarAccordion from '../../components/UIKit/CalendarAccordion.vue';
+import ImportantButton from '../../components/UIKit/ImportantButton.vue';
+import OkButton from '../../components/UIKit/OkButton.vue';
 
 export default {
   name: 'IndexPage',
-  components: {Page, InputModal, CategoriesCarousell, TasksList, AddButton, CategoriesAccordion, CalendarAccordion, ImportantButton, OkButton},
+  components: {Page, InputModal, categories, TasksList, AddButton, CalendarAccordion, ImportantButton, OkButton},
   data: () => ({
     showModal: false
   }),
@@ -61,8 +58,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .home {
+  .inner-category {
     position: relative;
+    &__title-icon::v-deep svg {
+      width: 22rem;
+      height: 22rem;
+    }
     &__button {
       position: fixed;
       right: 25rem;

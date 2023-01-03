@@ -6,9 +6,8 @@
         <div class="main-content-wrapper">
           <textarea class="input-modal__input timemaster-title"
             type="text"
-            maxlength="15"
             :placeholder="placeholder"
-          />
+          ></textarea>
           <close class="input-modal__close"
             @click.native="$nuxt.$emit('closeModal')"
           />

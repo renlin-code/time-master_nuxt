@@ -16,7 +16,6 @@
             <task-circle v-else :color=color />
           </span>
           <p class="task__default-text"
-            @click="deleted = true"
           >{{ text }}</p>
         </div>
 
@@ -64,8 +63,25 @@ export default {
   data: () => ({
     done: false,
     deleted: false
-  })
+  }),
+  mounted() {
+    const swipeHandler = () => {
+      let touchStartX, touchEndX;
 
+      this.$el.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      })
+
+      this.$el.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+
+        if (touchStartX - touchEndX  > 100) {
+          this.deleted = true;
+        }
+      })
+    }
+    swipeHandler()
+  }
 }
 </script>
 
@@ -112,11 +128,12 @@ export default {
         color: $gray;
       }
       &-undo {
+        display: grid;
+        place-content: center;
         width: 63rem;
         height: 32rem;
         border: 2rem solid rgba( $gray, 0.5);
         border-radius: 30rem;
-        padding: 7rem 16rem;
         color: $gray;
         font-size: 12rem;
         line-height: 18rem;

@@ -60,7 +60,7 @@ export default {
 <style scoped lang="scss">
   .inner-category {
     position: relative;
-    &__title-icon::v-deep svg {
+    &__title-icon::deep svg {
       width: 22rem;
       height: 22rem;
     }

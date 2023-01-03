@@ -80,10 +80,10 @@ header {
 //Fade
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 360ms ease-in-out;
+  transition: all 360ms ease-in-out;
 }
 
-.fade-enter-from,
+.fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
@@ -94,7 +94,7 @@ header {
   transition: transform 360ms ease-in-out;
 }
 
-.scale-enter-from,
+.scale-enter,
 .scale-leave-to {
   transform: scale(0);
 }

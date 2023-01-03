@@ -53,7 +53,7 @@ export default {
   z-index: 2;
   background-color: #FFFFFF;
   transition: all 360ms ease-in-out;
-  box-shadow: 0px -5px 4px rgba($black, 0.25), -6px 4px 4px rgba($black, 0.25);
+  box-shadow: 0 -5rem 4rem rgba($black, 0.25), -6rem 4rem 4rem rgba($black, 0.25);
 
   &__cover-layer {
     width: 100%;
